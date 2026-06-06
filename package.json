@@ -1,0 +1,12 @@
+{
+  "name": "antigravity-portfolio",
+  "version": "1.0.0",
+  "description": "Premium Developer Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000 -o"
+  },
+  "keywords": [],
+  "author": "Alex Carter",
+  "license": "ISC"
+}
