@@ -46,22 +46,16 @@
         <h3 style="color: var(--accent-yellow); font-size: 0.85rem; margin-bottom: 1.5rem;">CHOOSE AN ITEM TO INSPECT</h3>
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;" class="item-grid">
-          <!-- Slot 1 (Project 1) -->
+          <!-- Slot 1 (VCT 2025 Slide Deck) -->
           <div class="inventory-slot active" data-item="project1" style="border: 4px solid var(--accent-cyan); cursor: pointer; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); transition: var(--transition-retro); position: relative;">
-            <i data-lucide="bar-chart-3" style="width: 42px; height: 42px; color: var(--accent-cyan);"></i>
+            <i data-lucide="presentation" style="width: 42px; height: 42px; color: var(--accent-pink);"></i>
             <span style="font-family: var(--font-game); font-size: 0.5rem; margin-top: 0.75rem; color: #fff;">ITEM 01</span>
           </div>
           
-          <!-- Slot 2 (Project 2) -->
+          <!-- Slot 2 (VCT 2026 Analytics Dashboard) -->
           <div class="inventory-slot" data-item="project2" style="border: 4px solid var(--text-primary); cursor: pointer; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); transition: var(--transition-retro); position: relative;">
-            <i data-lucide="trending-up" style="width: 42px; height: 42px; color: var(--accent-green);"></i>
+            <i data-lucide="layout-dashboard" style="width: 42px; height: 42px; color: var(--accent-neon);"></i>
             <span style="font-family: var(--font-game); font-size: 0.5rem; margin-top: 0.75rem; color: #fff;">ITEM 02</span>
-          </div>
-
-          <!-- Slot 3 (Project 3 - VCT 2025 Slide Deck) -->
-          <div class="inventory-slot" data-item="project3" style="border: 4px solid var(--text-primary); cursor: pointer; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); transition: var(--transition-retro); position: relative;">
-            <i data-lucide="presentation" style="width: 42px; height: 42px; color: var(--accent-pink);"></i>
-            <span style="font-family: var(--font-game); font-size: 0.5rem; margin-top: 0.75rem; color: #fff;">ITEM 03</span>
           </div>
 
           <!-- Empty Slots to make it look like a real gaming inventory grid -->
@@ -82,22 +76,23 @@
 
       <!-- Right side: Item Stats Inspector -->
       <div class="pixel-box" style="box-shadow: 8px 8px 0 var(--accent-cyan); min-height: 400px; display: flex; flex-direction: column;">
-        <h3 id="inspect-title" style="color: var(--accent-yellow); font-size: 0.95rem; border-bottom: 3px dashed var(--text-primary); padding-bottom: 1rem; margin-bottom: 1.5rem;">Competitor Intelligence HUD</h3>
+        <h3 id="inspect-title" style="color: var(--accent-yellow); font-size: 0.95rem; border-bottom: 3px dashed var(--text-primary); padding-bottom: 1rem; margin-bottom: 1.5rem;">VCT 2025 Deep Insights Slide Deck</h3>
         
         <div id="inspect-image-wrapper" style="border: 3px solid var(--text-primary); margin-bottom: 1.5rem; height: 180px; overflow: hidden; background: #000;">
-          <img id="inspect-image" src="project1.png" alt="Project Preview" style="width: 100%; height: 100%; object-fit: cover;">
+          <img id="inspect-image" src="images/vct2025_clutch_vs_map.png" alt="Project Preview" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
 
-        <p id="inspect-desc" style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; flex-grow: 1;">A professional market dashboard designed to monitor competitor packaging activities, track international pricing indicators, and compile industry reports for executive plan developments.</p>
+        <p id="inspect-desc" style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; flex-grow: 1;">An interactive, web-based slide deck analyzing the VCT 2025 competitive season. Highlights map-level win rates, clutch win rates, double controller synergies, and map win side advantages with top 5 meta agents.</p>
         
         <div style="border-top: 3px dashed var(--text-primary); padding-top: 1.5rem; margin-top: auto;">
           <h4 style="font-family: var(--font-game); font-size: 0.65rem; color: var(--accent-cyan); margin-bottom: 0.75rem;">ATTRIBUTES (TOOLS USED)</h4>
           <div id="inspect-tags" class="project-tags" style="margin-bottom: 1rem;">
-            <span class="project-tag">Power BI</span>
-            <span class="project-tag">Excel</span>
-            <span class="project-tag">Market Intelligence</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Matplotlib</span>
+            <span class="project-tag">Web Deck</span>
+            <span class="project-tag">Esports</span>
           </div>
-          <a id="inspect-link" href="#" target="_blank" class="btn" style="display: none; text-align: center; padding: 0.5rem; font-size: 0.65rem; box-shadow: 3px 3px 0 var(--accent-purple); width: 100%; text-decoration: none; margin-top: 1rem; color: white;">LAUNCH QUEST ➔</a>
+          <a id="inspect-link" href="vct2025_presentation.html" target="_blank" class="btn" style="display: block; text-align: center; padding: 0.5rem; font-size: 0.65rem; box-shadow: 3px 3px 0 var(--accent-purple); width: 100%; text-decoration: none; margin-top: 1rem; color: white;">LAUNCH QUEST ➔</a>
         </div>
       </div>
     </div>
@@ -121,25 +116,18 @@
     // Data of items
     const items = {
       project1: {
-        title: "Competitor Intelligence HUD",
-        desc: "A professional market dashboard designed to monitor competitor packaging activities, track international pricing indicators, and compile industry reports for executive plan developments.",
-        image: "project1.png",
-        tags: ["Power BI", "Excel", "Market Intelligence"],
-        link: "#"
-      },
-      project2: {
-        title: "18-Month Forecast Engine",
-        desc: "A regression model processing customer purchase frequencies, economic factors, and trend adjustments to yield forward-looking sales demand forecasts.",
-        image: "project2.png",
-        tags: ["R Program", "SQL", "Forecasting"],
-        link: "#"
-      },
-      project3: {
         title: "VCT 2025 Deep Insights Slide Deck",
-        desc: "An interactive, web-based slide deck analyzing the VCT 2025 competitive season. Highlights map-level win rates, clutch win rates on decider maps, the inverted-U relationship of roster diversity, and the correlation between academy pipelines and main team success.",
+        desc: "An interactive, web-based slide deck analyzing the VCT 2025 competitive season. Highlights map-level win rates, clutch win rates, double controller synergies, and map win side advantages with top 5 meta agents.",
         image: "images/vct2025_clutch_vs_map.png",
         tags: ["Python", "Matplotlib", "Web Deck", "Esports"],
         link: "vct2025_presentation.html"
+      },
+      project2: {
+        title: "VCT 2026 Analytics Dashboard",
+        desc: "A premium data analytics dashboard summarizing the VCT 2026 competitive circuit. Analyzes the introduction of Waylay and Tejo, Pistol Round momentum (Leviatán and Nongshim), economy-buy conversions, and Nongshim RedForce's dominant run.",
+        image: "images/vct2026_agent_meta.png",
+        tags: ["Python", "Matplotlib", "Dashboard", "Esports"],
+        link: "vct2026_dashboard.html"
       }
     };
 

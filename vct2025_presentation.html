@@ -172,7 +172,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      align-items: center;
+      align-items: stretch;
       width: 100%;
       margin-top: 20px;
     }
@@ -645,6 +645,9 @@
       <span class="presentation-title">Esports Statistical Analytics</span>
     </div>
     <div class="header-controls">
+      <a href="inventory.html" class="btn-control" style="text-decoration: none;">
+        ◀ BACK TO INVENTORY
+      </a>
       <button class="btn-control" id="toggleDrawerBtn">
         ☰ Slidedeck Index
       </button>
@@ -687,32 +690,28 @@
           <ul class="points-list">
             <li><strong>Complete Season Coverage</strong>: All regional Kickoff, Stages, and international tournament events analyzed.</li>
             <li><strong>Roster Profiling</strong>: Tracking all player roles (Duelists, Controllers, Initiators, Sentinels, IGLs).</li>
-            <li><strong>Pathfinders</strong>: Examining the grassroots development funnel linking academy rosters to main partnered divisions.</li>
+            <li><strong>Meta Tracking</strong>: Compiling round economy, agent picks, and utility usage trends across all competitive regions.</li>
           </ul>
         </div>
         <div style="display: flex; flex-direction: column; gap: 20px;">
-          <div class="stats-overview-grid" style="grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; margin-top: 0;">
+          <div class="stats-overview-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; margin-top: 0;">
             <div class="stat-box">
-              <div class="stat-number">48</div>
-              <div class="stat-label">Partnered Orgs</div>
+              <div class="stat-number">58</div>
+              <div class="stat-label">Unique Teams</div>
             </div>
             <div class="stat-box">
-              <div class="stat-number">23</div>
-              <div class="stat-label">Academy Teams</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">240</div>
+              <div class="stat-number">313</div>
               <div class="stat-label">Active Players</div>
             </div>
             <div class="stat-box">
-              <div class="stat-number">272</div>
+              <div class="stat-number">360</div>
               <div class="stat-label">Matches Traced</div>
             </div>
           </div>
           <div class="highlight-card cyan" style="padding: 20px;">
             <h4 style="font-family: var(--font-header); font-size: 1.2rem; color: var(--accent-neon); margin-bottom: 8px;">Key Research Objective</h4>
             <p style="font-size: 0.95rem; margin-bottom: 0;">
-              What factors separate standard qualifiers from regional leaders? We look past raw match records into map-level margins, roster assembly models, and developmental pipelines.
+              What factors separate standard qualifiers from regional leaders? We look past raw match records into map-level margins, roster assembly models, and economic efficiency.
             </p>
           </div>
         </div>
@@ -737,38 +736,38 @@
             <tbody>
               <tr class="highlight-row">
                 <td style="text-align: center; font-weight: bold;">1</td>
-                <td><strong>NRG Esports</strong></td>
-                <td style="text-align: center;">59 - 23</td>
-                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">71.95%</td>
-                <td style="text-align: center;">84.38%</td>
+                <td><strong>G2 Esports</strong></td>
+                <td style="text-align: center;">69 - 31</td>
+                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">69.00%</td>
+                <td style="text-align: center;">66.67%</td>
               </tr>
               <tr>
                 <td style="text-align: center; font-weight: bold;">2</td>
                 <td><strong>Paper Rex</strong></td>
-                <td style="text-align: center;">51 - 22</td>
-                <td style="text-align: center; font-weight: bold;">69.86%</td>
-                <td style="text-align: center;">82.14%</td>
+                <td style="text-align: center;">55 - 29</td>
+                <td style="text-align: center; font-weight: bold;">65.48%</td>
+                <td style="text-align: center;">73.33%</td>
               </tr>
               <tr class="highlight-row">
                 <td style="text-align: center; font-weight: bold;">3</td>
-                <td><strong>Team Vitality</strong></td>
-                <td style="text-align: center;">59 - 27</td>
-                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">68.60%</td>
-                <td style="text-align: center; font-weight: bold;">84.85%</td>
+                <td><strong>FNATIC</strong></td>
+                <td style="text-align: center;">57 - 36</td>
+                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">61.29%</td>
+                <td style="text-align: center; font-weight: bold;">57.14%</td>
               </tr>
               <tr>
                 <td style="text-align: center; font-weight: bold;">4</td>
-                <td>G2 Esports</td>
-                <td style="text-align: center;">30 - 23</td>
-                <td style="text-align: center;">56.60%</td>
-                <td style="text-align: center;">66.67%</td>
+                <td>DRX</td>
+                <td style="text-align: center;">48 - 32</td>
+                <td style="text-align: center;">60.00%</td>
+                <td style="text-align: center;">56.25%</td>
               </tr>
               <tr>
                 <td style="text-align: center; font-weight: bold;">5</td>
-                <td>Team Liquid</td>
-                <td style="text-align: center;">38 - 30</td>
-                <td style="text-align: center;">55.88%</td>
-                <td style="text-align: center;">60.00%</td>
+                <td>Xi Lai Gaming</td>
+                <td style="text-align: center;">40 - 28</td>
+                <td style="text-align: center;">58.82%</td>
+                <td style="text-align: center;">52.94%</td>
               </tr>
             </tbody>
           </table>
@@ -780,9 +779,9 @@
               Match-level records can mask margins. A team winning 2-0 is demonstrating map pool dominance, whereas teams winning 2-1 are dropping maps to lower seeds.
             </p>
             <ul class="points-list">
-              <li><strong>NRG Esports</strong> holds the highest map-level win-rate at <strong>71.95%</strong> (59 wins, 23 losses).</li>
-              <li><strong>Team Vitality</strong> is 1st in match-level win rate (84.85%) but drops to 3rd in map win rate (68.60%).</li>
-              <li>This divergence suggests that Vitality, while victorious, is playing in longer, closer series, making them a subject for "clutch" factor analysis.</li>
+              <li><strong>G2 Esports</strong> holds the highest map-level win-rate at <strong>69.00%</strong> (69 wins, 31 losses).</li>
+              <li><strong>Paper Rex</strong> is 2nd in map win rate (65.48%) but holds a higher match win rate (73.33%).</li>
+              <li>This divergence suggests that G2 is extremely dominant on their map selections, even when series run close.</li>
             </ul>
           </div>
         </div>
@@ -809,194 +808,324 @@
               </thead>
               <tbody>
                 <tr class="highlight-row">
-                  <td><strong>Team Vitality</strong></td>
-                  <td style="text-align: center;">20</td>
-                  <td style="text-align: center; font-weight: bold;">17</td>
-                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">85.00%</td>
+                  <td><strong>FNATIC</strong></td>
+                  <td style="text-align: center;">12</td>
+                  <td style="text-align: center; font-weight: bold;">10</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">83.33%</td>
                 </tr>
                 <tr>
-                  <td><strong>G2 Esports</strong></td>
+                  <td><strong>T1</strong></td>
                   <td style="text-align: center;">11</td>
                   <td style="text-align: center;">9</td>
-                  <td style="text-align: center; font-weight: bold;">81.82%</td>
+                  <td style="text-align: bold; color: var(--accent-neon); text-align: center;">81.82%</td>
                 </tr>
                 <tr>
-                  <td><strong>Sentinels</strong></td>
-                  <td style="text-align: center;">15</td>
-                  <td style="text-align: center;">11</td>
-                  <td style="text-align: center; font-weight: bold;">73.33%</td>
+                  <td><strong>Bilibili Gaming</strong></td>
+                  <td style="text-align: center;">9</td>
+                  <td style="text-align: center;">7</td>
+                  <td style="text-align: center; font-weight: bold;">77.78%</td>
                 </tr>
                 <tr>
-                  <td><strong>NRG Esports</strong></td>
-                  <td style="text-align: center;">18</td>
-                  <td style="text-align: center;">13</td>
-                  <td style="text-align: center;">72.22%</td>
+                  <td><strong>Rex Regum Qeon</strong></td>
+                  <td style="text-align: center;">7</td>
+                  <td style="text-align: center;">5</td>
+                  <td style="text-align: center;">71.43%</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p style="font-size: 0.95rem;">
             <strong>"Clutchness"</strong> measures performance on decider maps (Map 3 in Bo3, Map 5 in Bo5). 
-            Vitality is exceptionally clutch, winning <strong>85.0%</strong> of their decider games. While NRG and Paper Rex swept series more quickly, Vitality's mental resilience in deciders secured their regional championships.
+            FNATIC is exceptionally clutch, winning <strong>83.33%</strong> of their decider games, showing unmatched mental resilience in high-stakes deciders.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 5: Roster Nationality Diversity -->
+    <!-- Slide 5: The Double Controller Reign -->
     <section class="slide" id="slide5">
-      <h2>🌍 Roster Nationality & The Inverted-U Curve</h2>
+      <h2>🎭 The Double Controller Reign</h2>
       <div class="slide-layout-split">
         <div class="visualization-container">
-          <img src="images/vct2025_nationality_diversity.png" alt="Roster Nationality Diversity Performance">
+          <img src="images/vct2025_controller_reign.png" alt="Controller Setup Win Rates">
         </div>
         <div>
           <div class="data-table-container" style="margin-bottom: 20px;">
             <table>
               <thead>
                 <tr>
-                  <th style="text-align: center;">Unique Nationalities</th>
-                  <th style="text-align: center;">Avg. Match Win Rate</th>
-                  <th style="text-align: center;">Avg. Map Win Rate</th>
-                  <th style="text-align: center;">Teams Traced</th>
+                  <th>Tactical Setup</th>
+                  <th style="text-align: center;">Appearances</th>
+                  <th style="text-align: center;">Avg. Win Rate %</th>
+                  <th style="text-align: center;">Meta Maps</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td style="text-align: center; font-weight: bold;">1 (Homogeneous)</td>
-                  <td style="text-align: center;">29.52%</td>
-                  <td style="text-align: center;">38.39%</td>
-                  <td style="text-align: center;">13</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center;">2 Nationalities</td>
-                  <td style="text-align: center;">40.30%</td>
-                  <td style="text-align: center;">43.94%</td>
-                  <td style="text-align: center;">11</td>
-                </tr>
                 <tr class="highlight-row">
-                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">4 (Optimum)</td>
-                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">53.12%</td>
-                  <td style="text-align: center; font-weight: bold;">52.17%</td>
-                  <td style="text-align: center;">5</td>
+                  <td><strong>Omen + Viper (Double Smoker)</strong></td>
+                  <td style="text-align: center;">3,842</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">54.50%</td>
+                  <td style="text-align: center;">Bind, Ascent, Lotus</td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: bold;">5 (Extreme)</td>
-                  <td style="text-align: center; color: var(--accent-pink);">29.63%</td>
-                  <td style="text-align: center;">38.69%</td>
-                  <td style="text-align: center;">3</td>
+                  <td>Omen (Single Smoker)</td>
+                  <td style="text-align: center;">4,303</td>
+                  <td style="text-align: center;">48.20%</td>
+                  <td style="text-align: center;">Sunset, Haven</td>
+                </tr>
+                <tr>
+                  <td>Viper (Single Smoker)</td>
+                  <td style="text-align: center;">1,852</td>
+                  <td style="text-align: center;">46.10%</td>
+                  <td style="text-align: center;">Icebox, Breeze</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p style="font-size: 0.95rem; line-height: 1.5;">
-            Roster analysis shows a clear **Inverted-U relationship** between roster diversity and performance:
+            Analyzing controller selections shows the immense value of double smoker compositions:
             <br><br>
-            • Homogeneous teams average a low **29.52%** win rate.
+            • **Omen** (8,145 total picks) and **Viper** (5,694 total picks) was the most dominant controller pair.
             <br>
-            • Roster quality and win rate peak at **4 unique nationalities (53.12% WR)**, blending international superstar talent.
+            • Running both together yielded a **54.50% win rate**, significantly outperforming single controller layouts.
             <br>
-            • At **5 nationalities**, win rates collapse to **29.63%**, indicating communication barriers or cultural differences.
+            • Smoke coverage and decay utility allowed teams to block attacker paths and execute safe retakes.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 6: Academy pipelines -->
+    <!-- Slide 6: The Thrifty Paradox -->
     <section class="slide" id="slide6">
-      <h2>🌱 Strategic Value of Academy Teams</h2>
+      <h2>💰 The Thrifty Paradox: Save vs. Force Tiers</h2>
       <div class="slide-layout-split">
         <div class="visualization-container">
-          <img src="images/vct2025_academy_impact.png" alt="Academy pipeline performance impact">
+          <img src="images/vct2025_thrifty_paradox.png" alt="Economy win rates chart">
         </div>
         <div>
           <div class="highlight-card cyan" style="margin-bottom: 20px;">
-            <h3 style="font-size: 1.5rem; color: var(--accent-neon); margin-bottom: 8px;">Development Pipeline vs. Standings</h3>
+            <h3 style="font-size: 1.5rem; color: var(--accent-neon); margin-bottom: 8px;">Buy round win conversions</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">
-              Clubs investing in grassroots pipelines (maintaining an academy roster in Challengers/Game Changers) show massive performance improvements compared to organizations without one.
+              Loadout values govern win rates. However, saving completely for full guns can be more valuable than forced low-budget buys.
             </p>
           </div>
           <div class="data-table-container">
             <table>
               <thead>
                 <tr>
-                  <th>Has Academy Team?</th>
-                  <th style="text-align: center;">Avg. Championship Points</th>
-                  <th style="text-align: center;">Avg. Match Win Rate</th>
-                  <th style="text-align: center;">Total Teams</th>
+                  <th>Loadout Category</th>
+                  <th style="text-align: center;">Wins</th>
+                  <th style="text-align: center;">Losses</th>
+                  <th style="text-align: center;">Win Rate %</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="highlight-row">
-                  <td style="font-weight: bold; color: var(--accent-neon);">YES</td>
-                  <td style="text-align: center; font-weight: bold;">10.91 Points</td>
-                  <td style="text-align: center; font-weight: bold;">40.91%</td>
-                  <td style="text-align: center;">23 Orgs</td>
+                  <td style="font-weight: bold; color: var(--accent-neon);">Full Buy (20k+)</td>
+                  <td style="text-align: center; font-weight: bold;">8,114</td>
+                  <td style="text-align: center; font-weight: bold;">6,403</td>
+                  <td style="text-align: center;">55.89%</td>
                 </tr>
                 <tr>
-                  <td>NO</td>
-                  <td style="text-align: center;">3.40 Points</td>
-                  <td style="text-align: center; color: var(--accent-pink);">19.39%</td>
-                  <td style="text-align: center;">25 Orgs</td>
+                  <td>Semi-Buy (10-20k)</td>
+                  <td style="text-align: center;">2,856</td>
+                  <td style="text-align: center;">2,807</td>
+                  <td style="text-align: center;">50.43%</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td style="font-weight: bold; color: var(--accent-neon);">Eco Save (0-5k)</td>
+                  <td style="text-align: center; font-weight: bold;">1,311</td>
+                  <td style="text-align: center; font-weight: bold;">2,286</td>
+                  <td style="text-align: center;">36.45%</td>
+                </tr>
+                <tr>
+                  <td>Semi-Eco Force (5-10k)</td>
+                  <td style="text-align: center; color: var(--accent-pink);">310</td>
+                  <td style="text-align: center;">1,095</td>
+                  <td style="text-align: center;">22.06%</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p style="font-size: 0.85rem; margin-top: 15px; color: var(--text-muted);">
-            *Takeaway:* Running an academy correlates with a **3.2x increase** in championship points and **double** the average match win-rate. This highlights the value of internal scrim partners and scouting networks.
+            *Takeaway:* Force-buying cheap intermediate gear on Semi-Eco (5-10k) is highly inefficient, yielding a low **22.06% win rate**. A full save Eco (0-5k) using Sheriffs/Marshals achieves a **36.45% win rate** (1.6x higher).
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 7: Historic Win Streaks -->
+    <!-- Slide 7: Map Advantage & Meta Agents -->
     <section class="slide" id="slide7">
-      <h2>🔥 Winning Streaks & Momentum</h2>
+      <h2>🗺️ Map Advantage & Top 5 Meta Agents</h2>
       <div class="slide-layout-split">
+        <div style="overflow-y: auto; max-height: 440px; padding-right: 10px;">
+          <div class="data-table-container">
+            <table style="font-size: 0.85rem;">
+              <thead>
+                <tr>
+                  <th>Map Name</th>
+                  <th>Side Advantage</th>
+                  <th style="text-align: center;">Side WR Gap</th>
+                  <th>Top 5 Meta Agents (Pick Rate %)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Abyss</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">14.5%</td>
+                  <td>Sova (94.1%), Astra (68.6%), Jett (67.8%), Omen (59.3%), Kayo (50.0%)</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>Ascent</strong></td>
+                  <td>🛡️ Defender</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">9.2%</td>
+                  <td>Omen (97.6%), Sova (74.4%), Jett (47.6%), Kayo (47.6%), Yoru (47.2%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Bind</strong></td>
+                  <td>🛡️ Defender</td>
+                  <td style="text-align: center;">1.8%</td>
+                  <td>Raze (80.6%), Brimstone (75.9%), Viper (70.4%), Fade (54.2%), Gekko (34.7%)</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>Corrode</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center;">0.9%</td>
+                  <td>Omen (90.4%), Fade (71.9%), Viper (70.5%), Neon (43.2%), Yoru (37.7%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Fracture</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center;">1.4%</td>
+                  <td>Breach (96.6%), Brimstone (94.3%), Tejo (75.0%), Cypher (54.5%), Neon (47.7%)</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>Haven</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">4.6%</td>
+                  <td>Omen (96.5%), Sova (76.2%), Cypher (69.5%), Yoru (44.9%), Neon (43.2%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Icebox</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">5.8%</td>
+                  <td>Viper (98.7%), Killjoy (89.4%), Jett (71.2%), Sova (64.4%), Tejo (32.2%)</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>Lotus</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center;">0.4%</td>
+                  <td>Omen (97.0%), Fade (65.1%), Raze (57.0%), Viper (56.2%), Vyse (41.9%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Pearl</strong></td>
+                  <td>⚔️ Attacker</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">4.2%</td>
+                  <td>Astra (99.5%), Yoru (64.4%), Vyse (58.2%), Tejo (43.8%), Sova (43.3%)</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td><strong>Split</strong></td>
+                  <td>🛡️ Defender</td>
+                  <td style="text-align: center;">0.9%</td>
+                  <td>Viper (71.6%), Omen (71.6%), Raze (57.7%), Yoru (51.4%), Tejo (48.6%)</td>
+                </tr>
+                <tr>
+                  <td><strong>Sunset</strong></td>
+                  <td>🛡️ Defender</td>
+                  <td style="text-align: center;">2.1%</td>
+                  <td>Omen (100.0%), Sova (75.0%), Neon (72.6%), Cypher (71.4%), Breach (31.0%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="visualization-container">
-          <img src="images/vct2025_win_streaks.png" alt="Top Win Streaks Leaderboard">
+          <img src="images/vct2025_map_meta.png" alt="Map Side Win Rates">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Valorant Champions 2025 Winner -->
+    <section class="slide" id="slide8">
+      <h2>🏆 Valorant Champions 2025 Grand Champion</h2>
+      <div class="slide-layout-split">
+        <div>
+          <div class="highlight-card cyan" style="margin-bottom: 25px; border-left: 4px solid var(--accent-neon);">
+            <h3 style="font-size: 2.2rem; color: var(--accent-neon); margin-bottom: 10px; font-family: var(--font-header);">
+              CHAMPION: NRG
+            </h3>
+            <p style="font-size: 1.2rem; color: #fff; margin-bottom: 0; line-height: 1.4;">
+              Following an historic undefeated playoff bracket run, <strong>NRG</strong> claimed the crown of the ultimate Valorant Champions 2025 tournament.
+            </p>
+          </div>
+          <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+            In a highly anticipated Best-of-5 Grand Final rematch, <strong>NRG</strong> faced off against Europe's top seed, <strong>FNATIC</strong>. 
+            NRG overcame FNATIC in a grueling 3-2 victory to secure the cup, demonstrating supreme tactical depth, flexibility, and unmatched clutching ability.
+          </p>
+          <ul class="points-list" style="font-size: 0.92rem;">
+            <li><strong>Omen + Viper Synergy</strong>: Run double controllers extensively (Omen 249 picks, Viper 192 picks) to execute secure post-plants and site retakes.</li>
+            <li><strong>Corrode & Icebox Dominance</strong>: Unbeaten **100% WR** on Corrode (8-0) and **80% WR** on Icebox (4-1), forcing crucial opponent draft bans.</li>
+            <li><strong>Lotus Durability</strong>: Played Lotus 14 times (their most played map) with a robust **64.3% WR**, serving as their main anchor.</li>
+          </ul>
         </div>
         <div>
-          <div class="highlight-card" style="margin-bottom: 20px;">
-            <h3 style="font-size: 1.5rem; color: var(--accent-purple); margin-bottom: 8px;">Top 5 Momentum Leaders</h3>
-            <ul class="points-list" style="margin-top: 15px;">
-              <li><strong>Team Vitality</strong>: 20 matches consecutive wins (All-time VCT Record).</li>
-              <li><strong>NRG Esports</strong>: 12 matches consecutive wins.</li>
-              <li><strong>Paper Rex</strong>: 8 matches consecutive wins.</li>
-              <li><strong>G2 Esports</strong>: 7 matches consecutive wins.</li>
-              <li><strong>Sentinels</strong>: 6 matches consecutive wins.</li>
-            </ul>
+          <div class="highlight-card" style="padding: 25px; background: rgba(18, 16, 26, 0.9); border-color: rgba(155, 93, 229, 0.4);">
+            <h3 style="font-size: 1.5rem; color: var(--accent-purple); margin-bottom: 15px; text-transform: uppercase;">
+              NRG Playoff Bracket Run
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+                <span><strong>Upper Quarterfinals</strong></span>
+                <span style="color: var(--accent-neon);">NRG 2 — 0 GIANTX</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+                <span><strong>Upper Semifinals</strong></span>
+                <span style="color: var(--accent-neon);">NRG 2 — 1 MIBR</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+                <span><strong>Upper Final</strong></span>
+                <span style="color: var(--accent-neon);">NRG 2 — 0 FNATIC</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-bottom: 5px;">
+                <span><strong style="color: var(--accent-pink);">Grand Final (Bo5)</strong></span>
+                <span style="color: var(--accent-neon); font-weight: bold;">NRG 3 — 2 FNATIC 🏆</span>
+              </div>
+            </div>
+            <div style="margin-top: 25px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
+              <div style="font-size: 3rem; margin-bottom: 5px;">🏆</div>
+              <div style="font-family: var(--font-header); font-weight: 700; font-size: 1.4rem; color: var(--accent-neon); letter-spacing: 1px; text-transform: uppercase;">
+                VCT 2025 WORLD CHAMPIONS
+              </div>
+            </div>
           </div>
-          <p style="font-size: 0.95rem;">
-            Long win streaks highlight a team's ability to maintain map preparation, prevent fatigue, and ride psychological momentum. Vitality's **20-match streak** stands out as the most dominant stretch in competitive Valorant history, showing unmatched consistency across tournament formats.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 8: Strategic Takeaways -->
-    <section class="slide" id="slide8">
+    <!-- Slide 9: Strategic Takeaways -->
+    <section class="slide" id="slide9">
       <h2>💡 Executive Strategic Recommendations</h2>
       <p style="font-size: 1.1rem; margin-bottom: 25px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-        For General Managers, Head Coaches, and scouts looking to design competitive championship-grade Valorant rosters in future iterations.
+        For General Managers, Head Coaches, and analysts looking to design competitive championship-grade Valorant compositions in future stages.
       </p>
       <div class="slide-layout-grid">
         <div class="grid-card">
-          <h3><span class="badge-number">1</span> Roster Cap</h3>
+          <h3><span class="badge-number">1</span> Double smokers</h3>
           <p style="color: var(--text-muted);">
-            Recruit international stars, but enforce a **4-nationality limit** on roster construction. Avoid fully diverse 5-nationality rosters to prevent communication latency during high-stakes rounds.
+            Enforce Omen + Viper layouts on Bind, Ascent, and Lotus. The high smoke output and retake flexibility yield a **54.50% win rate**.
           </p>
         </div>
         <div class="grid-card">
-          <h3><span class="badge-number">2</span> Pipeline Investment</h3>
+          <h3><span class="badge-number">2</span> Save Discipline</h3>
           <p style="color: var(--text-muted);">
-            Establish and fund an **Academy Team**. The internal practice environment, player scouting safety net, and brand loyalty yield a **3x return** in championship points and double the success rates.
+            Enforce strict saves on Eco (0-5k) instead of force-buying cheap gear. Full saves convert at **36.45% WR**, nearly double the force-buy rate.
           </p>
         </div>
         <div class="grid-card">
-          <h3><span class="badge-number">3</span> Mental Resilience</h3>
+          <h3><span class="badge-number">3</span> Map Advantage & Meta</h3>
           <p style="color: var(--text-muted);">
-            Prioritize coaching infrastructure and player psychology. As demonstrated by Vitality (85% clutch rate), the ability to execute on a **decider map** is what converts map win rates into trophies.
+            Align drafts with map side advantage and meta agent picks. Attacker-sided maps like Abyss (14.5% gap) require high-pick initiator/controller setups (Sova 94.1%, Astra 68.6%), while defender-sided maps like Ascent (9.2% gap) demand anchoring meta controllers like Omen (97.6% pick rate) to secure rounds.
           </p>
         </div>
       </div>
@@ -1015,17 +1144,18 @@
       <li class="drawer-item" onclick="jumpToSlide(1)">2. Season Scale & Data</li>
       <li class="drawer-item" onclick="jumpToSlide(2)">3. Map Dominance</li>
       <li class="drawer-item" onclick="jumpToSlide(3)">4. Clutch Deciders</li>
-      <li class="drawer-item" onclick="jumpToSlide(4)">5. Roster Diversity</li>
-      <li class="drawer-item" onclick="jumpToSlide(5)">6. Academy Structures</li>
-      <li class="drawer-item" onclick="jumpToSlide(6)">7. Win Streaks</li>
-      <li class="drawer-item" onclick="jumpToSlide(7)">8. Strategic Takeaways</li>
+      <li class="drawer-item" onclick="jumpToSlide(4)">5. Controller Reign</li>
+      <li class="drawer-item" onclick="jumpToSlide(5)">6. Economy Win Rates</li>
+      <li class="drawer-item" onclick="jumpToSlide(6)">7. Map Meta & Top 5</li>
+      <li class="drawer-item" onclick="jumpToSlide(7)">8. VCT 2025 Champions</li>
+      <li class="drawer-item" onclick="jumpToSlide(8)">9. Strategic Takeaways</li>
     </ul>
   </aside>
 
   <!-- Slide Footer / Navigation Controls -->
   <footer>
     <div class="slide-progress-info" id="slideProgressText">
-      SLIDE 1 OF 8
+      SLIDE 1 OF 9
     </div>
     <div class="slide-dots" id="slideDots">
       <div class="dot active" onclick="jumpToSlide(0)"></div>
@@ -1036,6 +1166,7 @@
       <div class="dot" onclick="jumpToSlide(5)"></div>
       <div class="dot" onclick="jumpToSlide(6)"></div>
       <div class="dot" onclick="jumpToSlide(7)"></div>
+      <div class="dot" onclick="jumpToSlide(8)"></div>
     </div>
     <div class="nav-buttons">
       <button class="nav-btn" id="prevBtn" title="Previous Slide (Left Arrow)">◀</button>
