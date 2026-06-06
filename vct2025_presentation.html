@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VCT 2025 Esports Deep Insights & Analytics</title>
+  <!-- Google Fonts for premium tech/esports look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #08070b;
+      --card-bg: rgba(18, 16, 26, 0.7);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --accent-neon: #00f5d4;
+      --accent-purple: #9b5de5;
+      --accent-pink: #ff007f;
+      --accent-coral: #ff7b54;
+      --text-main: #f3f3f5;
+      --text-muted: #a0a0ab;
+      --font-header: 'Rajdhani', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --transition-speed: 0.6s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(155, 93, 229, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 245, 180, 0.06) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    /* Top Navigation bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 10;
+      background: rgba(8, 7, 11, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .vct-badge {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      color: white;
+      font-family: var(--font-header);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+    }
+
+    .presentation-title {
+      font-family: var(--font-header);
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--font-header);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-control:hover {
+      background: rgba(0, 245, 212, 0.1);
+      border-color: var(--accent-neon);
+      color: var(--accent-neon);
+      box-shadow: 0 0 15px rgba(0, 245, 212, 0.2);
+    }
+
+    /* Slides Container and Slide Layout */
+    .slides-container {
+      flex-grow: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px 80px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(50px);
+      transition: opacity var(--transition-speed) ease, 
+                  transform var(--transition-speed) cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .slide.previous {
+      transform: translateX(-50px);
+    }
+
+    .slide-layout-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .slide-layout-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .slide-layout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    /* Content styling */
+    h1 {
+      font-family: var(--font-header);
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .neon-text-purple {
+      color: #dfb2ff;
+      text-shadow: 0 0 30px rgba(155, 93, 229, 0.4);
+    }
+
+    .neon-text-cyan {
+      color: #bbfefa;
+      text-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+    }
+
+    h2 {
+      font-family: var(--font-header);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 245, 212, 0.3);
+    }
+
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent-purple), var(--accent-pink));
+    }
+
+    .highlight-card.cyan::before {
+      background: linear-gradient(to bottom, var(--accent-neon), var(--accent-purple));
+    }
+
+    /* Embedded Visualizations styling */
+    .visualization-container {
+      width: 100%;
+      height: 100%;
+      max-height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .visualization-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .visualization-container::after {
+      content: 'VCT 2025 SOURCE DATA';
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      font-family: var(--font-header);
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 1px;
+    }
+
+    /* Tables */
+    .data-table-container {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      font-family: var(--font-header);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent-neon);
+      font-weight: 600;
+      padding: 12px 16px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    tr.highlight-row td {
+      background: rgba(0, 245, 212, 0.04) !important;
+      border-left: 2px solid var(--accent-neon);
+    }
+
+    /* Key Points list */
+    .points-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .points-list li {
+      position: relative;
+      padding-left: 30px;
+      line-height: 1.5;
+    }
+
+    .points-list li::before {
+      content: '◢';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--accent-neon);
+      font-size: 12px;
+    }
+
+    /* Stats Grid */
+    .stats-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      border-color: var(--accent-purple);
+      background: rgba(155, 93, 229, 0.05);
+      box-shadow: 0 0 15px rgba(155, 93, 229, 0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-header);
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #fff, var(--accent-neon));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Slide specific styles */
+    /* Title Slide */
+    .title-banner {
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 60px 40px;
+      background: radial-gradient(circle at center, rgba(155, 93, 229, 0.15) 0%, transparent 70%);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+      max-width: 900px;
+      width: 100%;
+      border-top: 2px solid rgba(0, 245, 212, 0.3);
+    }
+
+    .start-button {
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--accent-neon), var(--accent-purple));
+      border: none;
+      color: #000;
+      padding: 16px 40px;
+      font-family: var(--font-header);
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 0 25px rgba(0, 245, 212, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .start-button:hover {
+      box-shadow: 0 0 35px rgba(155, 93, 229, 0.5);
+      transform: scale(1.05);
+      color: #fff;
+    }
+
+    /* Slide Footer / Navigation Controls */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-top: 1px solid var(--border-color);
+      z-index: 10;
+      background: rgba(8, 7, 11, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-progress-info {
+      font-family: var(--font-header);
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--accent-neon);
+      box-shadow: 0 0 10px var(--accent-neon);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 18px;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--accent-neon);
+      color: var(--accent-neon);
+      box-shadow: 0 0 15px rgba(0, 245, 212, 0.25);
+      background: rgba(0, 245, 212, 0.05);
+    }
+
+    /* Slide Index Drawer */
+    .slide-drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 320px;
+      height: 100vh;
+      background: rgba(10, 8, 14, 0.95);
+      backdrop-filter: blur(20px);
+      border-left: 1px solid var(--border-color);
+      z-index: 100;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-drawer.open {
+      right: 0;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 15px;
+    }
+
+    .drawer-header h3 {
+      font-family: var(--font-header);
+      font-size: 22px;
+      color: var(--accent-neon);
+    }
+
+    .close-drawer {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .close-drawer:hover {
+      color: white;
+    }
+
+    .drawer-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .drawer-item {
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--font-header);
+      font-weight: 500;
+      font-size: 16px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+    }
+
+    .drawer-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: white;
+    }
+
+    .drawer-item.active {
+      background: rgba(155, 93, 229, 0.1);
+      border-color: rgba(155, 93, 229, 0.3);
+      color: var(--accent-purple);
+    }
+
+    /* Key Takeaway Grid cards */
+    .grid-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .grid-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--accent-purple);
+    }
+
+    .grid-card h3 {
+      font-family: var(--font-header);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--accent-neon);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .grid-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .badge-number {
+      background: rgba(0, 245, 212, 0.1);
+      color: var(--accent-neon);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Fullscreen Progress bar */
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: 12;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, var(--accent-neon), var(--accent-purple), var(--accent-pink));
+      transition: width 0.3s ease;
+      box-shadow: 0 0 10px var(--accent-neon);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="logo-container">
+      <span class="vct-badge">VCT 2025</span>
+      <span class="presentation-title">Esports Statistical Analytics</span>
+    </div>
+    <div class="header-controls">
+      <button class="btn-control" id="toggleDrawerBtn">
+        ☰ Slidedeck Index
+      </button>
+      <button class="btn-control" id="fullscreenBtn">
+        ⛶ Fullscreen Mode
+      </button>
+    </div>
+  </header>
+
+  <!-- Slide Progression Indicators -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <!-- Slides Deck Container -->
+  <main class="slides-container">
+
+    <!-- Slide 1: Title -->
+    <section class="slide active" id="slide1">
+      <div class="slide-layout-center">
+        <div class="title-banner">
+          <h1 class="neon-text-purple">VCT 2025 ESPORTS</h1>
+          <h1 class="neon-text-cyan" style="font-size: 4rem; margin-bottom: 10px;">DEEP INSIGHTS & ANALYTICS</h1>
+          <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto 30px auto; color: var(--text-muted);">
+            An advanced study on team map dominance, clutch deciders, roster nationality construction, and strategic academy structures.
+          </p>
+          <button class="start-button" onclick="goToSlide(1)">Start Presentation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2: Data Overview -->
+    <section class="slide" id="slide2">
+      <h2>📊 Season Dataset & Scale</h2>
+      <div class="slide-layout-split">
+        <div>
+          <p style="font-size: 1.2rem; margin-bottom: 30px;">
+            The analytics in this slide deck compile performance records across the entirety of the VCT 2025 competitive circuit, tracing player careers, team management decisions, and championship points metrics.
+          </p>
+          <ul class="points-list">
+            <li><strong>Complete Season Coverage</strong>: All regional Kickoff, Stages, and international tournament events analyzed.</li>
+            <li><strong>Roster Profiling</strong>: Tracking all player roles (Duelists, Controllers, Initiators, Sentinels, IGLs).</li>
+            <li><strong>Pathfinders</strong>: Examining the grassroots development funnel linking academy rosters to main partnered divisions.</li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="stats-overview-grid" style="grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; margin-top: 0;">
+            <div class="stat-box">
+              <div class="stat-number">48</div>
+              <div class="stat-label">Partnered Orgs</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">23</div>
+              <div class="stat-label">Academy Teams</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">240</div>
+              <div class="stat-label">Active Players</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">272</div>
+              <div class="stat-label">Matches Traced</div>
+            </div>
+          </div>
+          <div class="highlight-card cyan" style="padding: 20px;">
+            <h4 style="font-family: var(--font-header); font-size: 1.2rem; color: var(--accent-neon); margin-bottom: 8px;">Key Research Objective</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">
+              What factors separate standard qualifiers from regional leaders? We look past raw match records into map-level margins, roster assembly models, and developmental pipelines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Map Dominance -->
+    <section class="slide" id="slide3">
+      <h2>🗺️ Map Dominance vs. Match Records</h2>
+      <div class="slide-layout-split">
+        <div class="data-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 60px; text-align: center;">Rank</th>
+                <th>Team Name</th>
+                <th style="text-align: center;">Maps W-L</th>
+                <th style="text-align: center;">Map Win %</th>
+                <th style="text-align: center;">Match Win %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td style="text-align: center; font-weight: bold;">1</td>
+                <td><strong>NRG Esports</strong></td>
+                <td style="text-align: center;">59 - 23</td>
+                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">71.95%</td>
+                <td style="text-align: center;">84.38%</td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold;">2</td>
+                <td><strong>Paper Rex</strong></td>
+                <td style="text-align: center;">51 - 22</td>
+                <td style="text-align: center; font-weight: bold;">69.86%</td>
+                <td style="text-align: center;">82.14%</td>
+              </tr>
+              <tr class="highlight-row">
+                <td style="text-align: center; font-weight: bold;">3</td>
+                <td><strong>Team Vitality</strong></td>
+                <td style="text-align: center;">59 - 27</td>
+                <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">68.60%</td>
+                <td style="text-align: center; font-weight: bold;">84.85%</td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold;">4</td>
+                <td>G2 Esports</td>
+                <td style="text-align: center;">30 - 23</td>
+                <td style="text-align: center;">56.60%</td>
+                <td style="text-align: center;">66.67%</td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold;">5</td>
+                <td>Team Liquid</td>
+                <td style="text-align: center;">38 - 30</td>
+                <td style="text-align: center;">55.88%</td>
+                <td style="text-align: center;">60.00%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="highlight-card">
+            <h3 style="font-size: 1.6rem; color: var(--accent-purple); margin-bottom: 12px;">Map Win Rate as a Core Metric</h3>
+            <p>
+              Match-level records can mask margins. A team winning 2-0 is demonstrating map pool dominance, whereas teams winning 2-1 are dropping maps to lower seeds.
+            </p>
+            <ul class="points-list">
+              <li><strong>NRG Esports</strong> holds the highest map-level win-rate at <strong>71.95%</strong> (59 wins, 23 losses).</li>
+              <li><strong>Team Vitality</strong> is 1st in match-level win rate (84.85%) but drops to 3rd in map win rate (68.60%).</li>
+              <li>This divergence suggests that Vitality, while victorious, is playing in longer, closer series, making them a subject for "clutch" factor analysis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Clutch Deciders -->
+    <section class="slide" id="slide4">
+      <h2>🏆 Clutch Play: Decider Map Win Rates</h2>
+      <div class="slide-layout-split">
+        <div class="visualization-container">
+          <img src="images/vct2025_clutch_vs_map.png" alt="Map Win Rate vs Clutch Win Rate">
+        </div>
+        <div>
+          <div class="data-table-container" style="margin-bottom: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Team Name</th>
+                  <th style="text-align: center;">Decider Games</th>
+                  <th style="text-align: center;">Wins</th>
+                  <th style="text-align: center;">Clutch Win %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td><strong>Team Vitality</strong></td>
+                  <td style="text-align: center;">20</td>
+                  <td style="text-align: center; font-weight: bold;">17</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">85.00%</td>
+                </tr>
+                <tr>
+                  <td><strong>G2 Esports</strong></td>
+                  <td style="text-align: center;">11</td>
+                  <td style="text-align: center;">9</td>
+                  <td style="text-align: center; font-weight: bold;">81.82%</td>
+                </tr>
+                <tr>
+                  <td><strong>Sentinels</strong></td>
+                  <td style="text-align: center;">15</td>
+                  <td style="text-align: center;">11</td>
+                  <td style="text-align: center; font-weight: bold;">73.33%</td>
+                </tr>
+                <tr>
+                  <td><strong>NRG Esports</strong></td>
+                  <td style="text-align: center;">18</td>
+                  <td style="text-align: center;">13</td>
+                  <td style="text-align: center;">72.22%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.95rem;">
+            <strong>"Clutchness"</strong> measures performance on decider maps (Map 3 in Bo3, Map 5 in Bo5). 
+            Vitality is exceptionally clutch, winning <strong>85.0%</strong> of their decider games. While NRG and Paper Rex swept series more quickly, Vitality's mental resilience in deciders secured their regional championships.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Roster Nationality Diversity -->
+    <section class="slide" id="slide5">
+      <h2>🌍 Roster Nationality & The Inverted-U Curve</h2>
+      <div class="slide-layout-split">
+        <div class="visualization-container">
+          <img src="images/vct2025_nationality_diversity.png" alt="Roster Nationality Diversity Performance">
+        </div>
+        <div>
+          <div class="data-table-container" style="margin-bottom: 20px;">
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Unique Nationalities</th>
+                  <th style="text-align: center;">Avg. Match Win Rate</th>
+                  <th style="text-align: center;">Avg. Map Win Rate</th>
+                  <th style="text-align: center;">Teams Traced</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center; font-weight: bold;">1 (Homogeneous)</td>
+                  <td style="text-align: center;">29.52%</td>
+                  <td style="text-align: center;">38.39%</td>
+                  <td style="text-align: center;">13</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">2 Nationalities</td>
+                  <td style="text-align: center;">40.30%</td>
+                  <td style="text-align: center;">43.94%</td>
+                  <td style="text-align: center;">11</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">4 (Optimum)</td>
+                  <td style="text-align: center; font-weight: bold; color: var(--accent-neon);">53.12%</td>
+                  <td style="text-align: center; font-weight: bold;">52.17%</td>
+                  <td style="text-align: center;">5</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: bold;">5 (Extreme)</td>
+                  <td style="text-align: center; color: var(--accent-pink);">29.63%</td>
+                  <td style="text-align: center;">38.69%</td>
+                  <td style="text-align: center;">3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.5;">
+            Roster analysis shows a clear **Inverted-U relationship** between roster diversity and performance:
+            <br><br>
+            • Homogeneous teams average a low **29.52%** win rate.
+            <br>
+            • Roster quality and win rate peak at **4 unique nationalities (53.12% WR)**, blending international superstar talent.
+            <br>
+            • At **5 nationalities**, win rates collapse to **29.63%**, indicating communication barriers or cultural differences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Academy pipelines -->
+    <section class="slide" id="slide6">
+      <h2>🌱 Strategic Value of Academy Teams</h2>
+      <div class="slide-layout-split">
+        <div class="visualization-container">
+          <img src="images/vct2025_academy_impact.png" alt="Academy pipeline performance impact">
+        </div>
+        <div>
+          <div class="highlight-card cyan" style="margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; color: var(--accent-neon); margin-bottom: 8px;">Development Pipeline vs. Standings</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">
+              Clubs investing in grassroots pipelines (maintaining an academy roster in Challengers/Game Changers) show massive performance improvements compared to organizations without one.
+            </p>
+          </div>
+          <div class="data-table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Has Academy Team?</th>
+                  <th style="text-align: center;">Avg. Championship Points</th>
+                  <th style="text-align: center;">Avg. Match Win Rate</th>
+                  <th style="text-align: center;">Total Teams</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td style="font-weight: bold; color: var(--accent-neon);">YES</td>
+                  <td style="text-align: center; font-weight: bold;">10.91 Points</td>
+                  <td style="text-align: center; font-weight: bold;">40.91%</td>
+                  <td style="text-align: center;">23 Orgs</td>
+                </tr>
+                <tr>
+                  <td>NO</td>
+                  <td style="text-align: center;">3.40 Points</td>
+                  <td style="text-align: center; color: var(--accent-pink);">19.39%</td>
+                  <td style="text-align: center;">25 Orgs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 0.85rem; margin-top: 15px; color: var(--text-muted);">
+            *Takeaway:* Running an academy correlates with a **3.2x increase** in championship points and **double** the average match win-rate. This highlights the value of internal scrim partners and scouting networks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Historic Win Streaks -->
+    <section class="slide" id="slide7">
+      <h2>🔥 Winning Streaks & Momentum</h2>
+      <div class="slide-layout-split">
+        <div class="visualization-container">
+          <img src="images/vct2025_win_streaks.png" alt="Top Win Streaks Leaderboard">
+        </div>
+        <div>
+          <div class="highlight-card" style="margin-bottom: 20px;">
+            <h3 style="font-size: 1.5rem; color: var(--accent-purple); margin-bottom: 8px;">Top 5 Momentum Leaders</h3>
+            <ul class="points-list" style="margin-top: 15px;">
+              <li><strong>Team Vitality</strong>: 20 matches consecutive wins (All-time VCT Record).</li>
+              <li><strong>NRG Esports</strong>: 12 matches consecutive wins.</li>
+              <li><strong>Paper Rex</strong>: 8 matches consecutive wins.</li>
+              <li><strong>G2 Esports</strong>: 7 matches consecutive wins.</li>
+              <li><strong>Sentinels</strong>: 6 matches consecutive wins.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.95rem;">
+            Long win streaks highlight a team's ability to maintain map preparation, prevent fatigue, and ride psychological momentum. Vitality's **20-match streak** stands out as the most dominant stretch in competitive Valorant history, showing unmatched consistency across tournament formats.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Strategic Takeaways -->
+    <section class="slide" id="slide8">
+      <h2>💡 Executive Strategic Recommendations</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 25px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        For General Managers, Head Coaches, and scouts looking to design competitive championship-grade Valorant rosters in future iterations.
+      </p>
+      <div class="slide-layout-grid">
+        <div class="grid-card">
+          <h3><span class="badge-number">1</span> Roster Cap</h3>
+          <p style="color: var(--text-muted);">
+            Recruit international stars, but enforce a **4-nationality limit** on roster construction. Avoid fully diverse 5-nationality rosters to prevent communication latency during high-stakes rounds.
+          </p>
+        </div>
+        <div class="grid-card">
+          <h3><span class="badge-number">2</span> Pipeline Investment</h3>
+          <p style="color: var(--text-muted);">
+            Establish and fund an **Academy Team**. The internal practice environment, player scouting safety net, and brand loyalty yield a **3x return** in championship points and double the success rates.
+          </p>
+        </div>
+        <div class="grid-card">
+          <h3><span class="badge-number">3</span> Mental Resilience</h3>
+          <p style="color: var(--text-muted);">
+            Prioritize coaching infrastructure and player psychology. As demonstrated by Vitality (85% clutch rate), the ability to execute on a **decider map** is what converts map win rates into trophies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Slide Index Drawer -->
+  <aside class="slide-drawer" id="slideDrawer">
+    <div class="drawer-header">
+      <h3>Slidedeck Index</h3>
+      <button class="close-drawer" id="closeDrawerBtn">✕</button>
+    </div>
+    <ul class="drawer-list">
+      <li class="drawer-item active" onclick="jumpToSlide(0)">1. Title Slide</li>
+      <li class="drawer-item" onclick="jumpToSlide(1)">2. Season Scale & Data</li>
+      <li class="drawer-item" onclick="jumpToSlide(2)">3. Map Dominance</li>
+      <li class="drawer-item" onclick="jumpToSlide(3)">4. Clutch Deciders</li>
+      <li class="drawer-item" onclick="jumpToSlide(4)">5. Roster Diversity</li>
+      <li class="drawer-item" onclick="jumpToSlide(5)">6. Academy Structures</li>
+      <li class="drawer-item" onclick="jumpToSlide(6)">7. Win Streaks</li>
+      <li class="drawer-item" onclick="jumpToSlide(7)">8. Strategic Takeaways</li>
+    </ul>
+  </aside>
+
+  <!-- Slide Footer / Navigation Controls -->
+  <footer>
+    <div class="slide-progress-info" id="slideProgressText">
+      SLIDE 1 OF 8
+    </div>
+    <div class="slide-dots" id="slideDots">
+      <div class="dot active" onclick="jumpToSlide(0)"></div>
+      <div class="dot" onclick="jumpToSlide(1)"></div>
+      <div class="dot" onclick="jumpToSlide(2)"></div>
+      <div class="dot" onclick="jumpToSlide(3)"></div>
+      <div class="dot" onclick="jumpToSlide(4)"></div>
+      <div class="dot" onclick="jumpToSlide(5)"></div>
+      <div class="dot" onclick="jumpToSlide(6)"></div>
+      <div class="dot" onclick="jumpToSlide(7)"></div>
+    </div>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prevBtn" title="Previous Slide (Left Arrow)">◀</button>
+      <button class="nav-btn" id="nextBtn" title="Next Slide (Right Arrow/Space)">▶</button>
+    </div>
+  </footer>
+
+  <script>
+    // Slide Navigation Logic
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const drawerItems = document.querySelectorAll('.drawer-item');
+    const slideProgressText = document.getElementById('slideProgressText');
+    const progressBar = document.getElementById('progressBar');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideDrawer = document.getElementById('slideDrawer');
+    const toggleDrawerBtn = document.getElementById('toggleDrawerBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length;
+
+    // Make slides keyboard navigatable
+    document.body.tabIndex = 0;
+    document.body.focus();
+
+    function updatePresentationState() {
+      // Manage active slide styling
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active', 'previous');
+        if (idx === currentSlideIndex) {
+          slide.classList.add('active');
+        } else if (idx < currentSlideIndex) {
+          slide.classList.add('previous');
+        }
+      });
+
+      // Manage navigation dot styling
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlideIndex);
+      });
+
+      // Manage slide drawer items active class
+      drawerItems.forEach((item, idx) => {
+        item.classList.toggle('active', idx === currentSlideIndex);
+      });
+
+      // Update text indicators
+      slideProgressText.textContent = `SLIDE ${currentSlideIndex + 1} OF ${totalSlides}`;
+      
+      // Update progress bar
+      const fillPercentage = ((currentSlideIndex + 1) / totalSlides) * 100;
+      progressBar.style.width = `${fillPercentage}%`;
+
+      // Enable/Disable buttons at boundaries
+      prevBtn.disabled = currentSlideIndex === 0;
+      nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+      prevBtn.style.opacity = currentSlideIndex === 0 ? '0.3' : '1';
+      nextBtn.style.opacity = currentSlideIndex === totalSlides - 1 ? '0.3' : '1';
+    }
+
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) {
+        currentSlideIndex = index;
+        updatePresentationState();
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlideIndex < totalSlides - 1) {
+        currentSlideIndex++;
+        updatePresentationState();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        updatePresentationState();
+      }
+    }
+
+    function jumpToSlide(index) {
+      goToSlide(index);
+      slideDrawer.classList.remove('open');
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+        prevSlide();
+      }
+    });
+
+    // Button event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Slide drawer controls
+    toggleDrawerBtn.addEventListener('click', () => {
+      slideDrawer.classList.toggle('open');
+    });
+
+    closeDrawerBtn.addEventListener('click', () => {
+      slideDrawer.classList.remove('open');
+    });
+
+    // Close drawer clicking outside of it
+    document.addEventListener('click', (e) => {
+      if (!slideDrawer.contains(e.target) && e.target !== toggleDrawerBtn && slideDrawer.classList.contains('open')) {
+        slideDrawer.classList.remove('open');
+      }
+    });
+
+    // Fullscreen implementation
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    // Initial state
+    updatePresentationState();
+  </script>
+</body>
+</html>
