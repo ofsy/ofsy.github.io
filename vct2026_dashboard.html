@@ -566,6 +566,70 @@
     .footer-socials a:hover {
       color: var(--accent-neon);
     }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 20px;
+      }
+      .presentation-title {
+        display: none;
+      }
+      main {
+        padding: 15px;
+        gap: 20px;
+      }
+      .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .summary-card {
+        padding: 15px;
+      }
+      .summary-value {
+        font-size: 24px;
+      }
+      .summary-icon-wrapper {
+        width: 40px;
+        height: 40px;
+      }
+      .tab-btn {
+        padding: 8px 12px;
+        font-size: 15px;
+      }
+      .info-card {
+        padding: 20px;
+      }
+      .info-card h2 {
+        font-size: 20px;
+      }
+      .filter-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+      .search-input-container {
+        max-width: 100%;
+      }
+      table th, table td {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+      footer.dashboard-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+      .roster-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>

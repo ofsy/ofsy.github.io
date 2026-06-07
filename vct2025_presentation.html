@@ -634,6 +634,85 @@
       transition: width 0.3s ease;
       box-shadow: 0 0 10px var(--accent-neon);
     }
+
+    @media (max-width: 968px) {
+      .slide-layout-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+      .slide {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 20px;
+      }
+      .presentation-title {
+        display: none;
+      }
+      .btn-control {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      #toggleDrawerBtn, #fullscreenBtn {
+        font-size: 11px;
+      }
+      .slide {
+        padding: 20px 20px 80px 20px;
+        justify-content: flex-start;
+        overflow-y: auto;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .title-banner {
+        padding: 30px 20px;
+        margin-top: 20px;
+      }
+      .stats-overview-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+      }
+      .visualization-container {
+        max-height: 280px;
+      }
+      footer {
+        padding: 12px 20px;
+      }
+      .slide-drawer {
+        width: 100%;
+        right: -100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .start-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+      .stats-overview-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+      .highlight-card {
+        padding: 20px;
+      }
+      table th, table td {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
